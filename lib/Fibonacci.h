@@ -8,7 +8,8 @@
 
 class Fibonacci {
 public:
-    unsigned int recursive(int nth);
+    static unsigned int recursive(int nth);
+    static unsigned int iterative(int nth);
 };
 
 
