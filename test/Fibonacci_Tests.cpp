@@ -13,6 +13,19 @@ TEST(Fibonacci, Recursive) {
     EXPECT_EQ(sut->recursive(45), 1134903170);
 }
 
+TEST(Fibonacci, Recursive_Cache) {
+    const auto sut = new Fibonacci();
+    auto cache = std::unordered_map<int, unsigned int>();
+
+    EXPECT_EQ(sut->recursive_cached(0, cache), 0);
+    EXPECT_EQ(sut->recursive_cached(1, cache), 1);
+    EXPECT_EQ(sut->recursive_cached(2, cache), 1);
+    EXPECT_EQ(sut->recursive_cached(3, cache), 2);
+    EXPECT_EQ(sut->recursive_cached(10, cache), 55);
+    EXPECT_EQ(sut->recursive_cached(15, cache), 610);
+    EXPECT_EQ(sut->recursive_cached(45, cache), 1134903170);
+}
+
 TEST(Fibonacci, Iterative) {
     const auto sut = new Fibonacci();
 
