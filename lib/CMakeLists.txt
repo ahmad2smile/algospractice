@@ -9,6 +9,8 @@ set(HEADER_FILES
 
 set(SOURCE_FILES
         Fibonacci.cpp
+        Search.cpp
+        Search.h
 )
 
 add_library(lib STATIC ${SOURCE_FILES} ${HEADER_FILES})

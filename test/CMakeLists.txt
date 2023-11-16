@@ -13,5 +13,6 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(test Fibonacci_Tests.cpp)
+add_executable(test Fibonacci_Tests.cpp
+        Search_Tests.cpp)
 target_link_libraries(test gtest gtest_main lib)
