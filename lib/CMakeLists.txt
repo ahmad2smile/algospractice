@@ -11,6 +11,8 @@ set(SOURCE_FILES
         Fibonacci.cpp
         Search.cpp
         Search.h
+        Sorting.cpp
+        Sorting.h
 )
 
 add_library(lib STATIC ${SOURCE_FILES} ${HEADER_FILES})
