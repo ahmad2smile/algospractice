@@ -10,6 +10,7 @@
 class Sorting {
 public:
     static void merge_sort(int unsorted[], int len);
+    static void quick_sort(int* unsorted, int start_index, int end_index);
 };
 
 

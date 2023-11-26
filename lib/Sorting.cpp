@@ -4,6 +4,8 @@
 
 #include "Sorting.h"
 
+#include <array>
+
 /**
  * \brief
  * Time:
@@ -40,7 +42,7 @@ void Sorting::merge_sort(int unsorted[], const int len) {
 
     // ==========================================================================> Recursive call: n/2 * n/4 * n/8 * n/16... 1 => O(log n)
     // ==========================================================================> 16, 8, 4, 2...1 => log n
-    merge_sort(left, leftLength); 
+    merge_sort(left, leftLength);
     // ==========================================================================> Recursive call: n/2 * n/4 * n/8 * n/16... 1 => O(log n)
     // ==========================================================================> 16, 8, 4, 2...1 => log n
     merge_sort(right, rightLength);
@@ -76,4 +78,31 @@ void Sorting::merge_sort(int unsorted[], const int len) {
         rightIndex += 1;
         i += 1;
     }
+}
+
+/*
+ */
+void Sorting::quick_sort(int* unsorted, const int start_index, const int end_index) {
+    if (end_index <= start_index) {
+        return;
+    }
+
+    int* pivot = &unsorted[end_index];
+    auto follow_index = start_index - 1;
+
+    for (int i = start_index; i < end_index; i++) {
+        if (int* current_ele = &unsorted[i]; *current_ele <= *pivot) {
+            follow_index++;
+
+            std::swap(unsorted[follow_index], *current_ele);
+        }
+    }
+
+    follow_index++;
+    std::swap(unsorted[follow_index], *pivot);
+
+    // ===============================================================> n/2  2 * 2... n
+    // ==========================================================================> O(2^n)
+    quick_sort(unsorted, start_index, follow_index - 1);
+    quick_sort(unsorted, follow_index + 1, end_index);
 }
