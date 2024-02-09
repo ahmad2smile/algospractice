@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 23)
 
 set(HEADER_FILES
         Fibonacci.h
+        Hashmap.h
 )
 
 set(SOURCE_FILES
@@ -13,6 +14,9 @@ set(SOURCE_FILES
         Search.h
         Sorting.cpp
         Sorting.h
+        Hashmap.cpp
+        Intervalmap.cpp
+        Intervalmap.h
 )
 
 add_library(lib STATIC ${SOURCE_FILES} ${HEADER_FILES})

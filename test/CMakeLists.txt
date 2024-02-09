@@ -15,5 +15,7 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(test Fibonacci_Tests.cpp
         Search_Tests.cpp
-        Sorting_Tests.cpp)
+        Sorting_Tests.cpp
+        Hashmap_Tests.cpp
+        Intervalmap_Tests.cpp)
 target_link_libraries(test gtest gmock gtest_main lib)
